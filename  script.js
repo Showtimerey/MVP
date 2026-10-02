@@ -9,10 +9,9 @@ const keyboardDisplay = document.getElementById("keyboard");
 function setupWord() {
   wordDisplay.innerHTML = "";
   for (let i = 0; i < targetWord.length; i++) {
-    const dash = document.createElement("span");
+    const dash = document.createElement("div");
+    dash.classList.add("dash-box");
     dash.textContent = "_";
-    dash.style.fontSize = "2rem";
-    dash.style.margin = "0 5px";
     wordDisplay.appendChild(dash);
   }
 }
@@ -24,11 +23,8 @@ function setupKeyboard() {
   
   for (let char of alphabet) {
     const button = document.createElement("button");
+    button.classList.add("key-btn");
     button.textContent = char;
-    button.style.padding = "10px 15px";
-    button.style.fontSize = "1rem";
-    button.style.cursor = "pointer";
-    
     keyboardDisplay.appendChild(button);
   }
 }
